@@ -45,7 +45,6 @@ com.netflix.genie.security.oauth2
 com.netflix.genie.security.oauth2.pingfederate
 com.netflix.genie.security.saml
 com.netflix.genie.security.x509
-com.netflix.genie.test.categories
 com.netflix.genie.test.suppliers
 com.netflix.genie.test.web.configs
 com.netflix.genie.ui.controllers
