@@ -69,6 +69,7 @@ com.netflix.genie.web.jpa.services
 com.netflix.genie.web.jpa.specifications
 com.netflix.genie.web.jpa.utils
 com.netflix.genie.web.properties
+com.netflix.genie.web.resources.agent
 com.netflix.genie.web.resources.writers
 com.netflix.genie.web.rpc.grpc.interceptors
 com.netflix.genie.web.rpc.grpc.services.impl.v4
