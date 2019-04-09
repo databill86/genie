@@ -718,7 +718,7 @@ b.conum * { color: inherit !important; }
 <span id="author" class="author">Tom Gianos</span><br>
 <span id="email" class="email"><a href="mailto:NetflixOSS@netflix.com">NetflixOSS@netflix.com</a></span><br>
 <span id="revnumber">version 3.3.19-SNAPSHOT,</span>
-<span id="revdate">2019-04-08</span>
+<span id="revdate">2019-04-09</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -4971,6 +4971,16 @@ to the number of CPU cores x 2 + 1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.userMetrics.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether or not to enable publishing of user-tagged metrics ('genie.user.*')</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.userMetrics.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval in milliseconds between data refreshes to publish user metrics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5000</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.zookeeper.enabled</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to enable connectivity to Zookeeper</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
@@ -5857,6 +5867,20 @@ and system metrics and statistics.</p>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>HealthCheckMetricsAspect</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>status, exceptionClass, healthIndicatorName</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.user.active-jobs.gauge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of active jobs tagged with owner user.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">count</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>UserMetricsTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>-</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.user.active-memory.gauge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amount of memory used by active jobs tagged with owner user.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Megabytes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>UserMetricsTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>-</code></p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -5868,7 +5892,7 @@ and system metrics and statistics.</p>
 <div id="footer">
 <div id="footer-text">
 Version 3.3.19-SNAPSHOT<br>
-Last updated 2019-04-08 21:14:19 UTC
+Last updated 2019-04-09 20:24:24 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
