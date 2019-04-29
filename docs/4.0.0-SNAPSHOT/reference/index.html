@@ -5318,6 +5318,24 @@ determined by Zookeeper or other mechanism via Spring</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.agent-cleanup.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to enable the task that detects jobs whose agent has gone AWOL, and marks them failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.agent-cleanup.refreshInterval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How often the AWOL agent tasks executed, in milliseconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.agent-cleanup.timeLimit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How long of a leeway to give a job after it agent disconnected and before the job is marked failed, in milliseconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">120000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.cluster-checker.healthIndicatorsToIgnore</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The health indicator groups from the actuator /health endpoint to ignore when determining if a node is lost or not as
 a comma separated list</p></td>
@@ -5437,6 +5455,18 @@ number of CPU cores x 2 + 1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The number of available threads for the scheduler to use to run tasks on the node at scheduled intervals. Best to set
 to the number of CPU cores x 2 + 1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.user-metrics.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether or not to publish user-tagged metrics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.user-metrics.refresh-interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Publish/refresh interval in milliseconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 </tr>
 <tr>
@@ -6394,6 +6424,27 @@ published within the local JVM and available on the Actuator <code>/metrics</cod
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>AgentJobServiceImpl</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>status, exceptionClass, agentVersion, agentHost, handshakeDecision</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.user.active-jobs.gauge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of active jobs tagged with owner user.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">count</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>UserMetricsTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>-</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.user.active-memory.gauge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amount of memory used by active jobs tagged with owner user.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Megabytes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>UserMetricsTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>-</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.user.active-users.gauge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of distinct users with at least one job in RUNNING state.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">count</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>UserMetricsTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>-</code></p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -6405,7 +6456,7 @@ published within the local JVM and available on the Actuator <code>/metrics</cod
 <div id="footer">
 <div id="footer-text">
 Version 4.0.0-SNAPSHOT<br>
-Last updated 2019-04-29 19:46:02 UTC
+Last updated 2019-04-29 23:10:10 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

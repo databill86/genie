@@ -61,6 +61,7 @@ com.netflix.genie.web.jobs
 com.netflix.genie.web.jobs.workflow
 com.netflix.genie.web.jobs.workflow.impl
 com.netflix.genie.web.jpa.entities
+com.netflix.genie.web.jpa.entities.aggregates
 com.netflix.genie.web.jpa.entities.projections
 com.netflix.genie.web.jpa.entities.projections.v4
 com.netflix.genie.web.jpa.entities.v4
