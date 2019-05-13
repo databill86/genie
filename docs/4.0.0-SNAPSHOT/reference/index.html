@@ -718,7 +718,7 @@ b.conum * { color: inherit !important; }
 <span id="author" class="author">Tom Gianos</span><br>
 <span id="email" class="email"><a href="mailto:NetflixOSS@netflix.com">NetflixOSS@netflix.com</a></span><br>
 <span id="revnumber">version 4.0.0-SNAPSHOT,</span>
-<span id="revdate">2019-05-09</span>
+<span id="revdate">2019-05-13</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -5339,7 +5339,7 @@ determined by Zookeeper or other mechanism via Spring</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.tasks.cluster-checker.healthIndicatorsToIgnore</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The health indicator groups from the actuator /health endpoint to ignore when determining if a node is lost or not as
 a comma separated list</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">memory,genieMemory,discoveryComposite</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genieMemory,mail,genieAgent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 </tr>
 <tr>
@@ -6278,6 +6278,13 @@ published within the local JVM and available on the Actuator <code>/metrics</cod
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>-</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.tasks.clusterChecker.health.counter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Counts the number of time an remote node&#8217;s health check indicator returned a given status</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">count</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>ClusterCheckerTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>host, healthIndicator, healthStatus</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock"><code>genie.tasks.clusterChecker.lostJobs.rate</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number of jobs marked as "lost" due to a consistent failure to contact the Genie node hosting them</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">count</p></td>
@@ -6470,7 +6477,7 @@ published within the local JVM and available on the Actuator <code>/metrics</cod
 <div id="footer">
 <div id="footer-text">
 Version 4.0.0-SNAPSHOT<br>
-Last updated 2019-05-09 22:17:42 UTC
+Last updated 2019-05-13 19:30:07 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
